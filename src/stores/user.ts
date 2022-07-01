@@ -1,0 +1,65 @@
+import { defineStore } from "pinia";
+import { signInWithPopup, GoogleAuthProvider, getAuth, type User } from "firebase/auth"
+
+interface UserStore {
+    loading: boolean
+    user: User | null
+    authProvider: GoogleAuthProvider
+}
+
+export const userState = defineStore("userStore", {
+    state: (): UserStore => {
+        const googleAuthProvider = new GoogleAuthProvider()
+        return {
+            loading: false,
+            user: null,
+            authProvider: googleAuthProvider
+        }
+    },
+
+    actions: {
+        async signIn() {
+            this.loading = true
+            const auth = getAuth();
+            if (auth.currentUser) {
+                return
+            }
+
+            try {
+                signInWithPopup(auth, this.authProvider);
+            } catch (error) {
+                console.error(`Error while trying to login the user: ${error}`)
+            } finally {
+                this.loading = false
+            }
+        },
+
+        fetchUser() {
+            this.loading = false;
+            const auth = getAuth()
+            if (auth.currentUser) {
+                this.user = auth.currentUser;
+                this.loading = true;
+                return
+            }
+
+            auth.onAuthStateChanged((user) => {
+                console.log(user)
+                if (user) {
+                    if (this.user !== user) {
+                        this.user = user
+                    }
+                } else {
+                    this.user = null
+                }
+            })
+        },
+
+        signOut: () => {
+            const auth = getAuth();
+            if (auth.currentUser) {
+                return auth.signOut()
+            }
+        }
+    }
+})
