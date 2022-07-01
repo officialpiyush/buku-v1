@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { userState } from "@/stores/user";
-import { storeToRefs } from "pinia";
 
 const userStore = userState();
 </script>
