@@ -1,14 +1,14 @@
-<script setup lang="ts">
-import { userState } from "@/stores/user";
+userStore<script setup lang="ts">
+import { userStore } from "@/stores/user";
 
-const userStore = userState();
+const user = userStore();
 </script>
 
 <template>
-    <div class="absolute top-0 left-0 right-0 h-screen flex justify-center items-center">
+    <div class="flex justify-center py-4">
         <button
             class="shadow-md hover:(shadow-lg) group flex items-center gap-2 px-4 py-2 lg:(py-4) bg-green-500 rounded text-white font-bold"
-            @click="userStore.signIn">
+            @click="user.signIn">
             <svg class=" group-hover:( spin ) fill-current text-white h-6 w-6" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24">
                 <path fill="none" d="M0 0h24v24H0z" />

@@ -7,7 +7,7 @@ interface UserStore {
     authProvider: GoogleAuthProvider
 }
 
-export const userState = defineStore("userStore", {
+export const userStore = defineStore("userStore", {
     state: (): UserStore => {
         const googleAuthProvider = new GoogleAuthProvider()
         return {
@@ -35,15 +35,16 @@ export const userState = defineStore("userStore", {
         },
 
         fetchUser() {
-            this.loading = false;
+            this.loading = true;
             const auth = getAuth()
             if (auth.currentUser) {
                 this.user = auth.currentUser;
-                this.loading = true;
+                this.loading = false;
                 return
             }
 
             auth.onAuthStateChanged((user) => {
+                this.loading = true
                 console.log(user)
                 if (user) {
                     if (this.user !== user) {
@@ -52,6 +53,8 @@ export const userState = defineStore("userStore", {
                 } else {
                     this.user = null
                 }
+
+                this.loading = false
             })
         },
 
