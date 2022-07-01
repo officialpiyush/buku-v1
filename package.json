@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.11",
+    "clsx": "^1.1.1",
     "firebase": "^9.8.4",
     "pinia": "^2.0.14",
     "vue": "^3.2.37",
