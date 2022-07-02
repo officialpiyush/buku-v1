@@ -1,10 +1,11 @@
 export interface BookData {
     name: string
     image: string
-    authors: string | string[]
+    authors: string[]
     publisher: string
     identifiers: BookIdentifierData[]
     description: string
+    snippet: string
     date: string
     categories: string | string[]
     bookmarked: boolean
