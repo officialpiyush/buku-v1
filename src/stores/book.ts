@@ -21,9 +21,9 @@ export const useBookStore = defineStore("books", {
             this.firestore = firestore
         },
 
-        async registerBook(data: BookData) {
+        async registerBook(data: BookData, url: string) {
             this.books.push(data)
-            await setDoc(doc(this.firestore!!, "books"), data)
+            await setDoc(doc(this.firestore!!, "books"), { url, ...data })
         },
 
         async getAllBooks() {

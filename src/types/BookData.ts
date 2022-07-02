@@ -1,5 +1,4 @@
 export interface BookData {
-    url: string
     name: string
     image: string
     authors: string | string[]
