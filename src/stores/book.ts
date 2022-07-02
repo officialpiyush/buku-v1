@@ -1,4 +1,4 @@
-import { collection, doc, getDocs, getFirestore, query, QuerySnapshot, setDoc, where, type Firestore } from "firebase/firestore";
+import { addDoc, collection, getDocs, getFirestore, query, QuerySnapshot, where, type Firestore } from "firebase/firestore";
 import { defineStore } from "pinia";
 import type { BookData } from "../types/BookData";
 
@@ -22,8 +22,9 @@ export const useBookStore = defineStore("books", {
         },
 
         async registerBook(data: BookData, url: string) {
+            const firestore = getFirestore()
             this.books.push(data)
-            await setDoc(doc(this.firestore!!, "books"), { url, ...data })
+            await addDoc(collection(firestore, "books"), { url, ...data })
         },
 
         async getAllBooks() {
