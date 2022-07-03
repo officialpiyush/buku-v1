@@ -1,14 +1,9 @@
 <script setup lang="ts">
 import { useBookStore } from "@/stores/book";
-import { watch } from "vue-demi";
 import BukuBookContainer from "../components/BukuHome/BukuBookContainer.vue";
 
 const bookStore = useBookStore()
 bookStore.getAllBooks()
-
-watch(bookStore.books, () => {
-  console.log(bookStore)
-})
 </script>
 
 <template>
