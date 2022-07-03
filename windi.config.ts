@@ -5,7 +5,7 @@ export default defineConfig({
     theme: {
         extend: {
             fontFamily: {
-                inter: ["Inter", "sans-serif"]
+                inter: ["InterVariable", "Inter", "sans-serif"]
             }
         }
     },
