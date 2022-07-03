@@ -31,7 +31,7 @@ const onSearchClick = async () => {
             publisher: data.volumeInfo.publisher || "N/A",
             identifiers: data.volumeInfo.industryIdentifiers,
             description: data.volumeInfo.description,
-            snippet: data.searchInfo.textSnippet,
+            snippet: data.searchInfo ? data.searchInfo.textSnippet : "N/A",
             date: data.volumeInfo.publishedDate,
             categories: data.volumeInfo.categories,
             bookmarked: false
