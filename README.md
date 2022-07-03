@@ -1,46 +1,37 @@
-# buku
+<div align="center">
+    <img alt="project_image" src="https://github.com/officialpiyush/buku/blob/main/.github/images/Buku.png?raw=true" align="center" />
+    <br>
+    <br>
+    <a href="https://discord.gg/XwdCXMF">
+        <img src="https://img.shields.io/discord/543812119397924886.svg?style=for-the-badge&colorB=7289DA" alt="Support">
+    </a>
+    <a href="https://github.com/officialpiyush/buku/blob/master/LICENSE">
+        <img src="https://img.shields.io/github/license/officialpiyush/buku.svg?style=for-the-badge" alt="Apache-2.0 License">
+    </a>
+    <br>
+    <a href="https://github.com/officialpiyush/buku">
+        <img src="https://img.shields.io/github/languages/top/officialpiyush/buku.svg?style=for-the-badge">
+    </a>
+    <a href="https://github.com/officialpiyush/buku/issues">
+        <img src="https://img.shields.io/github/issues/officialpiyush/buku.svg?style=for-the-badge">
+    </a>
+    <a href="https://github.com/officialpiyush/buku/pulls">
+        <img src="https://img.shields.io/github/issues-pr/officialpiyush/buku.svg?style=for-the-badge">
+    </a>
+</div>
 
-This template should help get you started developing with Vue 3 in Vite.
+--- 
 
-## Recommended IDE Setup
+# What is Buku?
+ The idea of Buku came when I tried looking for services to keep track of my books. Buku is a small service using firebase to store details of books.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+ # How do I host it?
 
-## Type Support for `.vue` Imports in TS
+ - Rename `.env.local` to `.env` and fill in the firebase details.
+ - In the firebase project, enable `Authentication` and `Firestore`.
+ - If you want to limit the access of the service, alter the firestore rules accordingly.
+ - You can contact me if you are confused about hosting the project.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+# Authors
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-yarn
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-yarn dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-yarn build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-yarn lint
-```
+* **Piyush Bhangale** - Initial Work, Idea, Main Contributor - [Piyush](https://github.com/officialpiyush)
