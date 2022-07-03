@@ -6,7 +6,7 @@
         <img src="https://img.shields.io/discord/543812119397924886.svg?style=for-the-badge&colorB=7289DA" alt="Support">
     </a>
     <a href="https://github.com/officialpiyush/buku/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/officialpiyush/buku.svg?style=for-the-badge" alt="Apache-2.0 License">
+        <img src="https://img.shields.io/github/license/officialpiyush/buku?style=for-the-badge">
     </a>
     <br>
     <a href="https://github.com/officialpiyush/buku">
