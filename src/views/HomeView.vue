@@ -3,7 +3,6 @@ import { useBookStore } from "@/stores/book";
 import BukuBookContainer from "../components/BukuHome/BukuBookContainer.vue";
 
 const bookStore = useBookStore()
-bookStore.getAllBooks()
 </script>
 
 <template>

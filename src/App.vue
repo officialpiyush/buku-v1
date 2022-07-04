@@ -1,11 +1,15 @@
 useUserStore<script setup lang="ts">
 import BukuNavbar from './components/BukuNavbar.vue';
+import { useBookStore } from './stores/book';
 import { useUserStore } from './stores/user';
 import LoaderView from './views/LoaderView.vue';
 import LoginView from './views/LoginView.vue';
 
 const userStore = useUserStore()
+const bookStore = useBookStore()
+
 userStore.fetchUser()
+bookStore.getAllBooks()
 </script>
 
 <template>
