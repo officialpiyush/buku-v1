@@ -20,7 +20,7 @@ const generateGravatarImage = (): string => {
             </div>
 
             <div class="flex items-center gap-4" id="navbar_end">
-                <a class="flex gap-1 px-4 py-2 bg-gray-50 rounded" target="_blank" href="https://github.com/officialpiyush/buku/issues/new">
+                <a class="flex gap-1 px-4 py-2 bg-gray-50 hover:(bg-light-600 shadow-sm) rounded" target="_blank" href="https://github.com/officialpiyush/buku/issues/new">
                     <GithubIcon />
                     <span class="hidden md:inline-block">
                         Report an issue
