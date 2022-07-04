@@ -6,7 +6,10 @@ import type { APIBookData } from "../types/APIBookData";
 import type { BookData } from "../types/BookData";
 import BukuCard from "../components/BukuCard.vue";
 import router from "@/router";
+import { useUserStore } from "@/stores/user";
+import type { User } from "@firebase/auth";
 
+const userStore = useUserStore()
 const bookStore = useBookStore()
 const isbnNumber = ref("")
 const url = ref("")
@@ -41,7 +44,7 @@ const onSearchClick = async () => {
 }
 
 const registerBook = async () => {
-    await bookStore.registerBook(book.value as BookData, url.value)
+    await bookStore.registerBook(book.value as BookData, url.value, userStore.user as User)
     return router.push("/")
 }
 </script>

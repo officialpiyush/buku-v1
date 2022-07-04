@@ -1,4 +1,5 @@
 import type { BukuBookData } from "@/types/BukuBookData";
+import type { User } from "@firebase/auth";
 import { addDoc, collection, doc, getDocs, getFirestore, QuerySnapshot, setDoc } from "firebase/firestore";
 import { defineStore } from "pinia";
 import type { BookData } from "../types/BookData";
@@ -13,10 +14,10 @@ export const useBookStore = defineStore("books", {
     }),
 
     actions: {
-        async registerBook(data: BookData, url: string) {
+        async registerBook(data: BookData, url: string, user: User) {
             const firestore = getFirestore()
             const result = await addDoc(collection(firestore, "books"), { url, ...data })
-            this.books.push({ id: result.id, url, ...data })
+            this.books.push({ user_email: user.email || "ghost@buku", user_id: user.uid, id: result.id, url, ...data })
 
         },
 
