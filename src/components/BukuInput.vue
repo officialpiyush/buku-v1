@@ -13,7 +13,8 @@ defineProps({
     type: {
         type: String,
         default: "text"
-    }
+    },
+    placeholder: String
 })
 
 const inputText = ref("")
@@ -30,7 +31,8 @@ watch(inputText, () => {
         </div>
 
         <div class="col-span-9 lg:(col-span-3) outline-none">
-            <input class="w-full h-10 rounded-r-md border-none bg-light-700" v-model="inputText" :type="type">
+            <input :placeholder="placeholder" class="w-full h-10 rounded-r-md border-none bg-light-700"
+                v-model="inputText" :type="type">
         </div>
     </div>
 </template>
