@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from "vue-router";
 import { useUserStore } from "@/stores/user";
 import { MD5 } from "../utils/md5";
 import GithubIcon from "./icons/GithubIcon.vue";
@@ -16,7 +17,9 @@ const generateGravatarImage = (): string => {
     <div class="bg-gray-200 w-full">
         <div class="py-4 lg:(py-5) px-4 w-full max-w-6xl mx-auto flex items-center justify-between">
             <div id="navbar_start">
-                <img class="h-6 lg:h-7" src="/logo.svg" alt="buku_navbar">
+                <RouterLink to="/">
+                    <img class="h-6 lg:h-7" src="/logo.svg" alt="buku_navbar" />
+                </RouterLink>
             </div>
 
             <div class="flex items-center gap-4" id="navbar_end">
