@@ -1,6 +1,6 @@
 import type { BukuBookData } from "@/types/BukuBookData";
 import type { User } from "@firebase/auth";
-import { addDoc, collection, doc, getDocs, getFirestore, QuerySnapshot, setDoc } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, getFirestore, query, QuerySnapshot, setDoc, where } from "firebase/firestore";
 import { defineStore } from "pinia";
 import type { BookData } from "../types/BookData";
 
@@ -46,5 +46,17 @@ export const useBookStore = defineStore("books", {
 
             this.books[index] = { ...book, bookmarked: !book.bookmarked }
         },
+
+        async searchBookByTag(tag: string): Promise<BukuBookData[]> {
+            const firestore = getFirestore()
+            const books: BukuBookData[] = []
+            const q = query(collection(firestore, "books"), where("tags", "array-contains", tag))
+            const rawBooks = await getDocs(q) as QuerySnapshot<BukuBookData>
+            rawBooks.forEach((book) => {
+                books.push({ ...book.data(), id: book.id })
+            })
+
+            return books
+        }
     }
 })

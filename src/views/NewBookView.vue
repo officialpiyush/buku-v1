@@ -26,15 +26,15 @@ const onSearchClick = async () => {
         const data = res.items[0]
 
         const bookData: BookData = {
-            name: data.volumeInfo.title,
-            image: data.volumeInfo.imageLinks.thumbnail,
-            authors: data.volumeInfo.authors,
-            publisher: data.volumeInfo.publisher || "N/A",
-            identifiers: data.volumeInfo.industryIdentifiers,
-            description: data.volumeInfo.description,
+            name: data.volumeInfo.title || "N/A",
+            image: data.volumeInfo.imageLinks.thumbnail || "N/A",
+            authors: data.volumeInfo.authors || "N/A",
+            publisher: data.volumeInfo.publisher || "N/A" || "N/A",
+            identifiers: data.volumeInfo.industryIdentifiers || "N/A",
+            description: data.volumeInfo.description || "N/A",
             snippet: data.searchInfo ? data.searchInfo.textSnippet : "N/A",
-            date: data.volumeInfo.publishedDate,
-            categories: data.volumeInfo.categories,
+            date: data.volumeInfo.publishedDate || "N/A",
+            categories: data.volumeInfo.categories || "N/A",
             bookmarked: false
         }
 
@@ -46,7 +46,7 @@ const onSearchClick = async () => {
 
 const registerBook = async () => {
     await bookStore.registerBook(book.value as BookData, url.value, tags.value.split(",").map(tag => tag.toLowerCase().trim()), userStore.user as User)
-    return router.push("/")
+    return router.replace("/")
 }
 </script>
 
