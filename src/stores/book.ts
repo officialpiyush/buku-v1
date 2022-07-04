@@ -34,7 +34,6 @@ export const useBookStore = defineStore("books", {
             if (index < 0) return
 
             const book = this.books[index]
-            console.log({ bookmarkedBook: book })
             try {
                 const q = doc(firestore, "books", bookData.id)
                 await setDoc(q, {

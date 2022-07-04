@@ -14,14 +14,11 @@ const book = ref<BookData | null>(null)
 
 const onTextChange = (text: string) => {
     isbnNumber.value = text
-    console.log(isbnNumber)
 }
 
 const onSearchClick = async () => {
     try {
         const res: APIBookData = await fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbnNumber.value}`).then(r => r.json())
-
-        console.log(res)
         const data = res.items[0]
 
         const bookData: BookData = {
@@ -37,11 +34,9 @@ const onSearchClick = async () => {
             bookmarked: false
         }
 
-        console.log({ bookData })
-
         book.value = bookData
     } catch (error) {
-        console.log(error)
+        console.log(`Error while fetching book info: ${error}`)
     }
 }
 
