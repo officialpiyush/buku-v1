@@ -5,6 +5,7 @@ import type { PropType } from "vue"
 import { defineProps } from "vue"
 import BookmarkedIcon from "../icons/Bookmark/BookmarkedIcon.vue"
 import BookmarkIcon from "../icons/Bookmark/BookmarkIcon.vue"
+import BukuTag from "../BukuTag.vue"
 
 const bookStore = useBookStore()
 
@@ -36,6 +37,10 @@ const toggleBookmark = () => {
                 {{ book.name }}
             </span>
             <span class="inline-block w-full truncate text-sm text-gray-700">{{ book.authors.join(", ") }}</span>
+        </div>
+
+        <div v-if="book.tags && book.tags.length" class="w-full flex gap-2 flex-nowrap overflow-x-auto">
+            <BukuTag v-for="tag of book.tags" :name="tag" :key="tag" />
         </div>
 
         <div class="mt-1">

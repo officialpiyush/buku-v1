@@ -12,6 +12,7 @@ import type { BookData } from "../types/BookData";
 const userStore = useUserStore()
 const bookStore = useBookStore()
 const isbnNumber = ref("")
+const tags = ref("")
 const url = ref("")
 const book = ref<BookData | null>(null)
 
@@ -44,7 +45,7 @@ const onSearchClick = async () => {
 }
 
 const registerBook = async () => {
-    await bookStore.registerBook(book.value as BookData, url.value, userStore.user as User)
+    await bookStore.registerBook(book.value as BookData, url.value, tags.value.split(",").map(tag => tag.toLowerCase().trim()), userStore.user as User)
     return router.push("/")
 }
 </script>
@@ -57,6 +58,8 @@ const registerBook = async () => {
             <div class="space-y-2">
                 <BukuInput label="ISBN" type="text" @textChange="onTextChange" />
                 <BukuInput v-if="book !== null" label="URL" type="text" @textChange="value => url = value" />
+                <BukuInput v-if="book !== null" placeholder="Seperated by comma (,)" label="Tags" type="text"
+                    @textChange="value => tags = value" />
             </div>
 
             <div class="mt-2 space-x-2">
