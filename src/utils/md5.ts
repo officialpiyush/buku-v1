@@ -1,4 +1,4 @@
-/* eslint-disable no-var */
+// @ts-nocheck
 // courtesy https://stackoverflow.com/a/33486055/10265664
 export const MD5 = function (d) {
     const r = M(V(Y(X(d), 8 * d.length)));
