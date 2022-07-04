@@ -1,5 +1,5 @@
+import { getAuth, GoogleAuthProvider, signInWithPopup, type User } from "firebase/auth";
 import { defineStore } from "pinia";
-import { signInWithPopup, GoogleAuthProvider, getAuth, type User } from "firebase/auth"
 
 interface UserStore {
     loading: boolean

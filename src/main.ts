@@ -1,8 +1,8 @@
-import { createApp } from 'vue'
 import { initializeApp } from "firebase/app"
+import { createPinia } from "pinia"
+import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import { createPinia } from "pinia"
 
 import "@fontsource/inter"
 import "virtual:windi.css"

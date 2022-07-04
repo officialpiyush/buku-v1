@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref, watch } from 'vue'
+import { defineProps, ref, watch } from 'vue';
 
 const emit = defineEmits<{
     (e: "textChange", value: string): void

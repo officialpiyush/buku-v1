@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { BukuBookData } from "@/types/BukuBookData"
-import { defineProps } from "vue"
-import type { PropType } from "vue"
-import BookmarkIcon from "../icons/Bookmark/BookmarkIcon.vue"
 import { useBookStore } from "@/stores/book"
+import type { BukuBookData } from "@/types/BukuBookData"
+import type { PropType } from "vue"
+import { defineProps } from "vue"
 import BookmarkedIcon from "../icons/Bookmark/BookmarkedIcon.vue"
+import BookmarkIcon from "../icons/Bookmark/BookmarkIcon.vue"
 
 const bookStore = useBookStore()
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { BookData } from '@/types/BookData';
+import type { PropType } from "vue";
 import { defineProps } from 'vue';
-import type { PropType } from "vue"
-import BukuInformation from "./BukuInformation.vue"
+import BukuInformation from "./BukuInformation.vue";
 
 interface BookCardProps extends BookData {
     url?: string
