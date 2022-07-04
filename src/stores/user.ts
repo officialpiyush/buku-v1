@@ -45,7 +45,6 @@ export const useUserStore = defineStore("user", {
 
             auth.onAuthStateChanged((user) => {
                 this.loading = true
-                console.log(user)
                 if (user) {
                     if (this.user !== user) {
                         this.user = user
