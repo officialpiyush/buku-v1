@@ -16,7 +16,7 @@ const generateGravatarImage = (): string => {
     <div class="bg-gray-200 w-full">
         <div class="py-4 lg:(py-5) px-4 w-full max-w-6xl mx-auto flex items-center justify-between">
             <div id="navbar_start">
-                <img class="h-7" src="/logo.svg" alt="buku_navbar">
+                <img class="h-6 lg:h-7" src="/logo.svg" alt="buku_navbar">
             </div>
 
             <div class="flex items-center gap-4" id="navbar_end">
