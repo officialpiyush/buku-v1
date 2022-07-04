@@ -20,9 +20,7 @@ defineProps({
     <div class="flex flex-col gap-2 lg:(gap-4)" v-if="books.length > 0">
         <span class="font-bold text-lg lg:(text-xl)">{{ name }}</span>
         <div class="grid grid-cols-2 gap-2 lg:(grid-cols-5 gap-4)">
-            <div v-for="book of books" :key="book.id">
-                <BukuBookCard :book="book" />
-            </div>
+            <BukuBookCard v-for="book in books" :book="book" :key="book.id" />
         </div>
     </div>
 </template>
