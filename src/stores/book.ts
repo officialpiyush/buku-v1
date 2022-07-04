@@ -16,9 +16,9 @@ export const useBookStore = defineStore("books", {
     actions: {
         async registerBook(data: BookData, url: string, tags: string[], user: User) {
             const firestore = getFirestore()
-            const result = await addDoc(collection(firestore, "books"), { url, ...data })
+            const result = await addDoc(collection(firestore, "books"), { tags, user_email: user.email || "ghost@buku", user_id: user.uid, url, ...data })
             this.books.push({ tags, user_email: user.email || "ghost@buku", user_id: user.uid, id: result.id, url, ...data })
-
+            return
         },
 
         async getAllBooks() {
