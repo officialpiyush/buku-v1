@@ -7,7 +7,7 @@ interface UserStore {
     authProvider: GoogleAuthProvider
 }
 
-export const userStore = defineStore("userStore", {
+export const useUserStore = defineStore("user", {
     state: (): UserStore => {
         const googleAuthProvider = new GoogleAuthProvider()
         return {
